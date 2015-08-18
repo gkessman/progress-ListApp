@@ -1,6 +1,7 @@
 package com.github.progress.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,13 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ListServlet extends HttpServlet {
 
-	public ListServlet() {
-			
-	}
+	private static final long serialVersionUID = 1L;
+
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("did a get");
-		super.doGet(req, resp);
+		PrintWriter pw = resp.getWriter();
+		pw.println("The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man.");
+        pw.println("- George Bernard Shaw, Man and Superman ");
 	}
 	
 	@Override
