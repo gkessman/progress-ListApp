@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-public class List {
+public class ListItemList {
 
 	private String listName;	
 	private String listId;
-	private LinkedList category;	
+	private List<ListCategory> listCat = new LinkedList<ListCategory>();	
 	private Map<String, Object> probablywontneedthis = new HashMap<String, Object>();
 		
-	public List() {
+	public ListItemList() {
      	
 	}
 	
@@ -32,11 +32,11 @@ public class List {
 	}
 
 	public LinkedList getCategory() {
-		return category;
+		return listCat;
 	}
 
-	public void setCategory(LinkedList category) {
-		this.category = category;
+	public void setCategory(LinkedList listCatIn) {
+		this.listCat = listCatIn;
 	}
 
 }
