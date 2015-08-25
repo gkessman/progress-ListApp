@@ -2,6 +2,9 @@ package com.github.progress.pojo;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 @Entity("List")
 
 public class ListItemList {
@@ -24,11 +27,11 @@ public class ListItemList {
 		this.listName = listName;
 	}
 
-	public String getListId() {
+	public long getListId() {
 		return listId;
 	}
 
-	public void setListId(String listId) {
+	public void setListId(long listId) {
 		this.listId = listId;
 	}
 
