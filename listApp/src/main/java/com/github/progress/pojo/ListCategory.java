@@ -30,8 +30,8 @@ public class ListCategory{
 		this.catId = catId;
 	}
 
-	public LinkedList<ListItem> getItems() {
-		return (LinkedList<ListItem>)items;
+	public List<ListItem> getItems() {
+		return items;
 	}
 
 	public void setItems(LinkedList<ListItem> items) {

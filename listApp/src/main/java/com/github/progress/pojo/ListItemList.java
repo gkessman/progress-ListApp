@@ -2,11 +2,14 @@ package com.github.progress.pojo;
 
 import java.util.LinkedList;
 import java.util.List;
+@Entity("List")
 
 public class ListItemList {
 
+	@Id
+	private long listId;
+	
 	private String listName;	
-	private String listId;
 	private List<ListCategory> listCat = new LinkedList<ListCategory>();	
 	
 	public ListItemList() {
@@ -29,8 +32,8 @@ public class ListItemList {
 		this.listId = listId;
 	}
 
-	public LinkedList<ListCategory> getCategory() {
-		return (LinkedList<ListCategory>)listCat;
+	public List<ListCategory> getCategory() {
+		return listCat;
 	}
 
 	public void setCategory(LinkedList<ListCategory> listCatIn) {

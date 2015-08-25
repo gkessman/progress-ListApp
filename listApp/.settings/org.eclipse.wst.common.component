@@ -8,7 +8,19 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/G:/John/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2/f951934aa5ae5a88d7e6dfaa6d32307d834a88be/commons-collections-3.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/G:/John/.gradle/caches/modules-2/files-2.1/org.mongodb.morphia/morphia/1.0.1/f399b7aa324b5a4e09db3fc306fab9ebd6f27d72/morphia-1.0.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/G:/John/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/G:/John/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.0.2/7d3880dec6c8a2f07c1f544776c326834b513712/mongo-java-driver-3.0.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/G:/John/.gradle/caches/modules-2/files-2.1/com.thoughtworks.proxytoys/proxytoys/1.0/d22baee6d1b98dc38a6a428f774fd9e5b2ccf4af/proxytoys-1.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/G:/John/.gradle/caches/modules-2/files-2.1/cglib/cglib-nodep/2.2.2/d456bb230c70c0b95c76fb28e429d42f275941/cglib-nodep-2.2.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 	</wb-module>
