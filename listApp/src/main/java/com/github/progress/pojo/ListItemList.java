@@ -1,16 +1,14 @@
 package com.github.progress.pojo;
 
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
+import java.util.List;
 
 public class ListItemList {
 
 	private String listName;	
 	private String listId;
 	private List<ListCategory> listCat = new LinkedList<ListCategory>();	
-	private Map<String, Object> probablywontneedthis = new HashMap<String, Object>();
-		
+	
 	public ListItemList() {
      	
 	}
@@ -31,12 +29,11 @@ public class ListItemList {
 		this.listId = listId;
 	}
 
-	public LinkedList getCategory() {
-		return listCat;
+	public LinkedList<ListCategory> getCategory() {
+		return (LinkedList<ListCategory>)listCat;
 	}
 
-	public void setCategory(LinkedList listCatIn) {
+	public void setCategory(LinkedList<ListCategory> listCatIn) {
 		this.listCat = listCatIn;
 	}
-
 }
