@@ -1,0 +1,21 @@
+{
+  "name": "listApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gkessman/progress-ListApp",
+  "description": "#progress app for contructing lists via restful API",
+  "main": "main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": null,
+    "backbone-amd": null,
+    "underscore-amd": null,
+    "requirejs": null
+  }
+}
