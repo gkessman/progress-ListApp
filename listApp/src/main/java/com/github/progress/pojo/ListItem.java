@@ -1,9 +1,11 @@
 package com.github.progress.pojo;
 
+import org.mongodb.morphia.annotations.Embedded;
+@Embedded	
 public class ListItem{
-	
+
 	private String itemName;
-	private int itemId;
+	private long itemId;
 	private boolean status;
 	
 	public ListItem(){
@@ -18,7 +20,7 @@ public class ListItem{
 		this.itemName = itemName;
 	}
 
-	public int getItemId() {
+	public long getItemId() {
 		return itemId;
 	}
 

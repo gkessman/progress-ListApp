@@ -4,10 +4,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.mongodb.morphia.annotations.Embedded;
+@Embedded
 public class ListCategory{
 		
 	private String catName;
-	private int catId;
+	private long catId;
 	private List<ListItem> items = new LinkedList<ListItem>();
 	
 	public ListCategory() {
@@ -22,7 +24,7 @@ public class ListCategory{
 		this.catName = catName;
 	}
 
-	public int getCatId() {
+	public long getCatId() {
 		return catId;
 	}
 
@@ -37,6 +39,4 @@ public class ListCategory{
 	public void setItems(LinkedList<ListItem> items) {
 		this.items = items;
 	}
-
-
 }
