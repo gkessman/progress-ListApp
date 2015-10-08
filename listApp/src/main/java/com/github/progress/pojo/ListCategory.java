@@ -1,8 +1,7 @@
 package com.github.progress.pojo;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.mongodb.morphia.annotations.Embedded;
 @Embedded
@@ -10,7 +9,7 @@ public class ListCategory{
 		
 	private String catName;
 	private long catId;
-	private List<ListItem> items = new LinkedList<ListItem>();
+	private List<ListItem> items = new ArrayList<ListItem>();
 	
 	public ListCategory() {
 	    	
@@ -36,7 +35,7 @@ public class ListCategory{
 		return items;
 	}
 
-	public void setItems(LinkedList<ListItem> items) {
+	public void setItems(ArrayList<ListItem> items) {
 		this.items = items;
 	}
 }

@@ -3,6 +3,7 @@ package com.github.progress.pojo;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -12,10 +13,10 @@ public class Lyst {
     @Id
 	private long listId;
 	private String listName;	
-	private List<ListCategory> listCat = new ArrayList<ListCategory>();	
+	private List<ListCategory> category = new ArrayList<ListCategory>();	
 	
-	public Lyst() {
-     	
+	public Lyst(long listIdStart) {
+		AtomicLong listId = new AtomicLong(listIdStart);
 	}
 	
 	public String getListName() {
@@ -35,11 +36,11 @@ public class Lyst {
 	}
 
 	public List<ListCategory> getCategory() {
-		return listCat;
+		return category;
 	}
 
-	public void setCategory(LinkedList<ListCategory> listCatIn) {
-		this.listCat = listCatIn;
+	public void setCategory(ArrayList<ListCategory> listCatIn) {
+		this.category = listCatIn;
 	}
 	
 	
