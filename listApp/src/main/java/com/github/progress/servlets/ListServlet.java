@@ -21,6 +21,7 @@ import org.bson.Document;
 import org.bson.json.JsonReader;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
+import org.mongodb.morphia.query.Query;
 
 import com.github.progress.pojo.ListCategory;
 import com.github.progress.pojo.Lyst;
@@ -54,8 +55,17 @@ public class ListServlet extends HttpServlet {
 		PrintWriter pw = resp.getWriter();
 		pw.println("The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man.");
         pw.println("- George Bernard Shaw, Man and Superman ");
+        pw.println("---------------------------------------------");
+        pw.println("-Current Collections for listDB ");
         DB mbd = datastore.getDB();
         pw.println(mbd.getCollectionNames());
+        
+        final Query<Lyst> query = datastore.createQuery(Lyst.class);
+        final List<Lyst> result = query.asList();
+        pw.println("---------------------------------------------");
+        pw.println("-Current List Contents ");
+        pw.println(result.toString());
+        
 	}
 	 
 
@@ -108,21 +118,10 @@ public class ListServlet extends HttpServlet {
 	       
 	         break;
        
-        	}
-         
-        
+        	}        
+       
         }
-
-//		String listName  = req.getParameter("listName");
-//	    Lyst list  = new Lyst();
-//	    ListCategory listCatagory = new ListCategory();
-//	    listCatagory.setCatId(1);
-//		listCatagory.setCatName("op is a faggot");
-			    
-//	    list.setListId(1);
-//		list.setListName(listName);
-//		list.setCategory(listCatagory);
-		
+	
 		PrintWriter pw = resp.getWriter();
 		pw.println(list.toString());
 		datastore.save(list);

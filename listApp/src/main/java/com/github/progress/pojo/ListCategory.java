@@ -38,4 +38,11 @@ public class ListCategory{
 	public void setItems(ArrayList<ListItem> items) {
 		this.items = items;
 	}
+	
+	@Override
+	public String toString(){
+		return catId+":"+catName+":"+items.toString();
+	}
+	
+	
 }

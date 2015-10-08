@@ -18,6 +18,9 @@ public class Lyst {
 	public Lyst(long listIdStart) {
 		AtomicLong listId = new AtomicLong(listIdStart);
 	}
+	public Lyst() {
+	
+	}
 	
 	public String getListName() {
 		return listName;
@@ -47,7 +50,7 @@ public class Lyst {
 	
 	@Override
 	public String toString(){
-		return listId+":"+listName;
+		return listId+":"+listName+":"+category.toString();
 	}
 	
 }
