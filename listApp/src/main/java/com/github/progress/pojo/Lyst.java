@@ -11,12 +11,12 @@ import org.mongodb.morphia.annotations.Id;
 
 public class Lyst {
     @Id
-	private long listId;
+	private AtomicLong listId;
 	private String listName;	
 	private List<ListCategory> category = new ArrayList<ListCategory>();	
 	
 	public Lyst(long listIdStart) {
-		AtomicLong listId = new AtomicLong(listIdStart);
+		 listId = new AtomicLong(listIdStart);
 	}
 	public Lyst() {
 	
@@ -30,11 +30,11 @@ public class Lyst {
 		this.listName = listName;
 	}
 
-	public long getListId() {
+	public AtomicLong getListId() {
 		return listId;
 	}
 
-	public void setListId(long listId) {
+	public void setListId(AtomicLong listId) {
 		this.listId = listId;
 	}
 

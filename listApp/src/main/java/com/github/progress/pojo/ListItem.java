@@ -1,12 +1,18 @@
 package com.github.progress.pojo;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 import org.mongodb.morphia.annotations.Embedded;
 @Embedded	
 public class ListItem{
 
 	private String itemName;
-	private long itemId;
+	private AtomicLong itemId;
 	private boolean status;
+	
+	public ListItem(long itemIdStart){
+		itemId = new AtomicLong(itemIdStart);
+	}
 	
 	public ListItem(){
 	
@@ -20,11 +26,11 @@ public class ListItem{
 		this.itemName = itemName;
 	}
 
-	public long getItemId() {
+	public AtomicLong getItemId() {
 		return itemId;
 	}
 
-	public void setItemId(int itemId) {
+	public void setItemId(AtomicLong itemId) {
 		this.itemId = itemId;
 	}
 

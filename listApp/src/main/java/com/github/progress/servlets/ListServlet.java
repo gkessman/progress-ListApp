@@ -24,6 +24,7 @@ import org.mongodb.morphia.Morphia;
 import org.mongodb.morphia.query.Query;
 
 import com.github.progress.pojo.ListCategory;
+import com.github.progress.pojo.ListItem;
 import com.github.progress.pojo.Lyst;
 import com.mongodb.DB;
 import com.mongodb.Mongo;
@@ -38,13 +39,17 @@ public class ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
     final Morphia morphia = new Morphia();
-    private Datastore datastore = morphia.createDatastore(new MongoClient("www.namsek.info", 27017), "listDB");;
+    private String password = "pr0gr3ss";
+    
+    MongoClient mc = new MongoClient("www.namsek.info",27999);
+    private Datastore datastore;  
     private Gson gson = new Gson();
     private JsonObject jsonObject;
     private long listId;
     @Override
     public void init(ServletConfig config){
     	
+    	datastore = morphia.createDatastore(mc, "listDB" ,"admin",pwd ); 
     	morphia.mapPackage("com.github.progress.pojo");
     //will need to query mongo for current max list id and set atomic long to this value
     listId = 0;
@@ -53,6 +58,9 @@ public class ListServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter pw = resp.getWriter();
+		String listId = req.getParameter("getList");
+		// quey based on list id 
+		//write 
 		pw.println("The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man.");
         pw.println("- George Bernard Shaw, Man and Superman ");
         pw.println("---------------------------------------------");
@@ -90,20 +98,26 @@ public class ListServlet extends HttpServlet {
 	    JsonElement jse =  (JsonElement)jsonObject;
 	    Enumeration<String> params = req.getParameterNames();     
 	    Lyst list = new Lyst(listId);
+	    ListCategory listCat = new ListCategory(0);
+	    ListItem listItem = new ListItem(0);
 	    while(params.hasMoreElements()){
          
         	switch(params.nextElement()){
         	 case "addList":
-        //	 Type collectionType = new TypeToken<Collection<ListCategory>>(){}.getType();
-             list = gson.fromJson(jse, Lyst.class);     
+//        		 Type collectionType = new TypeToken<Collection<ListCategory>>(){}.getType();
+        		 list = gson.fromJson(jse, Lyst.class);     
 	         break;
-	        
-	         case "addItem":
-	                	 
-	         break;
-	        
+              
 	         case "addCategory":
-	         
+	        	 listCat = gson.fromJson(jse, ListCategory.class);  
+	         break;
+	         case "updateCatagory":
+	        	 //pass in list id , cat-id, updated text 
+	        	 //	        	 
+	        	 listCat = gson.fromJson(jse, ListCategory.class);  
+	         break;
+        	 case "addItem":
+	        	 listItem = gson.fromJson(jse, ListItem.class);   
 	         break;
 	         
 	         case "deleteList":
